@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>home page</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="static/Css/index.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h1>hello {{user.username}}</h1>
+        <button type="submit"><a href="{% url 'signout' %}">logout</a></button>
+
+
+        <table border="1px">
+            <tr>
+                <th>id</th>
+                <th>firstname</th>
+                <th>lastname</th>
+                <th>extension</th>
+                <th>email</th>
+                <th>officeCode</th>
+                <th>reportsTo</th>
+                <th>Department</th>
+            </tr>
+            {% for i in data %}
+            <tr>
+                <td>{{i.employeeNumber}}</td>
+                <td>{{i.firstName}}</td>
+                <td>{{i.lastName}}</td>
+                <td>{{i.extension}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.officeCode}}</td>
+                <td>{{i.reportsTo}}</td>
+                <td>{{i.jobTitle}}</td>
+                
+            </tr>
+            {% endfor %}
+ 
+        </table>
+        
+        <div class="container">
+              <main>
+                {% for message in messages %}
+                <h6>{{message}}</h6>
+                {% endfor %}
+
+              </main>
+        </div>
+        <script src="" async defer></script>
+
+        
+    </body>
+</html>
