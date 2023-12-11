@@ -67,7 +67,7 @@
     cursor:pointer;
 }
 .main a{
-    padding: 20px 5rem;
+    margin: 20px 5rem;
     text-decoration: none;
     color: black;
 }
@@ -79,4 +79,12 @@
 .main i{
     margin-left: -30px;
     cursor: pointer;
+}
+
+.notify{
+    margin: 0rem;
+    height: 3rem;
+    width: 15rem;
+    overflow: hidden;
+    background-color: #bbb;
 }
