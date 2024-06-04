@@ -12,6 +12,7 @@ from django.utils.http import urlsafe_base64_decode
 from django.utils.encoding import force_bytes
 from django.utils.encoding import force_str
 from mysqltutorial.tokens import generate_token
+from mysqltutorial.views import index
 # Create your views here.
 
 def Loging(request):
@@ -28,7 +29,7 @@ def Loging(request):
         if user is not None:
             login(request,user)
             messages.success(request,"hello how r u!")
-            return render(request,"index.html")
+            return redirect('home/')
         else:
             messages.error(request,"something went wrong")
             return redirect("login")

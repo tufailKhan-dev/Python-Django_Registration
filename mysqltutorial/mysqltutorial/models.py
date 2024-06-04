@@ -2,7 +2,7 @@ from django.db import models
 
 class mysqldata(models.Model):
 
-    employeeNumber = models.CharField(max_length=100)
+    employeeNumber = models.CharField(max_length=100, primary_key=True)
     firstName = models.CharField(max_length=100)
     jobTitle = models.CharField(max_length=100)
     lastName = models.CharField(max_length=100)
